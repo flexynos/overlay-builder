@@ -34,7 +34,7 @@ jobs:
     - name: Run test scripts
       run: |
         PATH=~/bin:$PATH
-        cd workspace && cd vendor_hardware_overlay
+        cd workspace && cd vendor_hardware_overlay_a35x
         git config --global user.name "Johx22"
         git config --global user.email "johannjose2004@gmail.com"
         cd tests
@@ -43,11 +43,11 @@ jobs:
     - name: Build APK's
       run: |
         PATH=~/bin:$PATH
-        cd workspace && cd vendor_hardware_overlay && cd build
+        cd workspace && cd vendor_hardware_overlay_a35x && cd build
         bash build.sh
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        path: workspace/vendor_hardware_overlay/build/*.apk
+        path: workspace/vendor_hardware_overlay_a35x/build/*.apk
         name: Overlays
